@@ -41,6 +41,7 @@
 
 <script setup lang="ts">
 import { ref } from "vue";
+// @ts-expect-error
 import { mask } from "vue-the-mask";
 const vMask = mask;
 
