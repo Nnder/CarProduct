@@ -1,18 +1,18 @@
 <template>
-  <v-card>
-    <div>
-      <ImageSlider :images="product.images" class="slider" />
-    </div>
-    <v-card-title>
-      {{ fullName }}
-    </v-card-title>
-    <v-card-subtitle>
-      {{ product.price }}
-    </v-card-subtitle>
+  <div class="CardWrapper">
+    <v-card class="Card">
+      <ImageSlider :images="product.images" />
+      <v-card-title>
+        {{ fullName }}
+      </v-card-title>
+      <v-card-subtitle>
+        {{ product.price }}
+      </v-card-subtitle>
 
-    <OrderNow />
-    <CarTabs :car="product" />
-  </v-card>
+      <OrderNow />
+      <CarTabs :car="product" />
+    </v-card>
+  </div>
 </template>
 
 <script lang="ts" setup>
@@ -73,7 +73,15 @@ const fullName = computed(() => {
 </script>
 
 <style lang="scss">
-// .slider {
-//   height: 50vh;
-// }
+.CardWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+
+  .Card {
+    max-width: 1680px;
+    width: 100%;
+  }
+}
 </style>
