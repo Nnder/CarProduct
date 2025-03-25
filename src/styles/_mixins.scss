@@ -1,0 +1,11 @@
+@mixin text-size($mobile, $tablet, $desktop) {
+  font-size: $mobile;
+
+  @media (min-width: 768px) {
+    font-size: $tablet;
+  }
+
+  @media (min-width: 1280px) {
+    font-size: $desktop;
+  }
+}

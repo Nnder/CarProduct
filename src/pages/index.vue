@@ -2,11 +2,11 @@
   <div class="CardWrapper">
     <v-card class="Card">
       <ImageSlider :images="product.images" />
-      <v-card-title>
+      <v-card-title class="CardTitle">
         {{ fullName }}
       </v-card-title>
-      <v-card-subtitle>
-        {{ product.price }}
+      <v-card-subtitle class="CardPrice">
+        {{ product.price }} руб.
       </v-card-subtitle>
 
       <OrderNow />
@@ -72,7 +72,9 @@ const fullName = computed(() => {
 });
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
+@use "@/styles/_mixins.scss" as *;
+
 .CardWrapper {
   width: 100%;
   display: flex;
@@ -82,6 +84,14 @@ const fullName = computed(() => {
   .Card {
     max-width: 1680px;
     width: 100%;
+
+    .CardTitle {
+      @include text-size(20px, 24px, 28px);
+    }
+
+    .CardPrice {
+      @include text-size(16px, 18px, 20px);
+    }
   }
 }
 </style>
